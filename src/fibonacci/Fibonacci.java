@@ -19,6 +19,10 @@ public class Fibonacci {
                 System.out.println("false, the " + input + " is not Fibonacci");
             }
         }
+        System.out.print("Congratulation! Your 10 fibonacci numbers are: ");
+        for(int i: result) {
+            System.out.print(" " + i);
+        }
     }
 
     public static boolean isFibonacci(int input) {
