@@ -4,12 +4,12 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class Fibonacci {
+public class FibonacciAlgo {
 
     public static void main(String[] args) throws Exception {
         ArrayList<Integer> result = new ArrayList<Integer>();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
+        System.out.println("Input your numbers");
         while (result.size() < 10) {
             int input = Integer.parseInt(reader.readLine());
             if (isFibonacci(input)) {
@@ -20,17 +20,23 @@ public class Fibonacci {
             }
         }
         System.out.print("Congratulation! Your 10 fibonacci numbers are: ");
-        for(int i: result) {
+        for (int i : result) {
             System.out.print(" " + i);
         }
     }
 
     public static boolean isFibonacci(int input) {
-        double fibonacciCheck1 = 5 * input * input + 4;
-        double fibonacciCheck2 = 5 * input * input - 4;
-        double check1 = Math.sqrt(fibonacciCheck1);
-        double check2 = Math.sqrt(fibonacciCheck2);
-        return check1 == Math.round(check1) || check2 == Math.round(check2);  // проверяем является ли корень квадратный целым числом
-    }
+        int first = 0;
+        int second = 1;
+        while (input >= first) {
+            if (input != first) {
+                second = first + second;
+                first = second - first;
+            } else {
+                return true;
+            }
+        }
+        return false;
 
+    }
 }
