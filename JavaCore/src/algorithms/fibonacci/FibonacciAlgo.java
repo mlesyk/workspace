@@ -1,4 +1,4 @@
-package fibonacci;
+package algorithms.fibonacci;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
